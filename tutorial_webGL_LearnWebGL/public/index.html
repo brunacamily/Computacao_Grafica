@@ -11,7 +11,13 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>WebGL!!</h1>
-    <canvas width="240" height="240"></canvas>
+    <!-- <h1>WebGL!!</h1>
+    <canvas width="240" height="240"></canvas> -->
+    <canvas></canvas>
+    <script>
+        const _c = document.getElementsByTagName('canvas')[0];
+        _c.width = window.innerWidth;
+        _c.height = window.innerHeight;
+    </script>
 </body>
 </html>

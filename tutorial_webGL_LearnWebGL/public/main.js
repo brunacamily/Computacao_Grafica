@@ -5,33 +5,75 @@ if (!gl) {
     throw new Error ('WebGL not supported')
 }
 
-//alert(`Everything's peachy hear with WebGL`) // para dar um aviso antes de atualizar 
-
-// vertexData = [...]
-
-// create buffer
-// load vertexData into buffer
-
-// create vertex shader
-// create fragment shader
-// create program
-// attach shaders to program
-
-// enable  vertex attributes
-
-// draw
 
 const vertexData = [
-    0, 1, 0,    // v1.position
-    1, -1, 0,   // v2.position
-    -1, -1, 0,   // v3.position
+
+    // Front
+    0.5, 0.5, 0.5,
+    0.5, -.5, 0.5,
+    -.5, 0.5, 0.5,
+    //-.5, 0.5, 0.5,
+    //0.5, -.5, 0.5,
+    //-.5, -.5, 0.5,
+
+    // Left
+    //-.5, 0.5, 0.5,
+    //-.5, -.5, 0.5,
+    //-.5, 0.5, -.5,
+    //-.5, 0.5, -.5,
+    //-.5, -.5, 0.5,
+    //-.5, -.5, -.5,
+
+    // Back
+    //-.5, 0.5, -.5,
+    //-.5, -.5, -.5,
+    //0.5, 0.5, -.5,
+    //0.5, 0.5, -.5,
+    //-.5, -.5, -.5,
+    //0.5, -.5, -.5,
+
+    // Right
+    //0.5, 0.5, -.5,
+    //0.5, -.5, -.5,
+    //0.5, 0.5, 0.5,
+    //0.5, 0.5, 0.5,
+    //0.5, -.5, 0.5,
+    //0.5, -.5, -.5,
+
+    // Top
+    //0.5, 0.5, 0.5,
+    //0.5, 0.5, -.5,
+    //-.5, 0.5, 0.5,
+    //-.5, 0.5, 0.5,
+    //0.5, 0.5, -.5,
+    //-.5, 0.5, -.5,
+
+    // Bottom
+    //0.5, -.5, 0.5,
+    //0.5, -.5, -.5,
+    //-.5, -.5, 0.5,
+    //-.5, -.5, 0.5,
+    //0.5, -.5, -.5,
+    //-.5, -.5, -.5,
 ];
 
+/*
 const colorData = [
-    1, 0, 0,    // v1.color
-    0, 1, 0,    // v2.color
-    0, 0, 1     // v3.color
-]; 
+            1, 0, 0,    // v1.color
+            0, 1, 0,    // v2.color
+            0, 0, 1     // v3.color 
+ ]; 
+*/
+
+function randomColor() {
+    return [Math.random(), Math.random(), Math.random()];
+}
+
+ let colorData = [
+     ...randomColor(),
+     ...randomColor(),
+     ...randomColor(),
+ ];
 
 const positionBuffer = gl.createBuffer(); // cria o buffer
 gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer); // carrega dados no buffer
